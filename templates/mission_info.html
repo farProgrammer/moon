@@ -1,0 +1,84 @@
+{% extends "index.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% if g.user %}
+
+            <li class="nav-item active">
+                <a class="nav-link" href="/{{g.user.id}}/homepage"> Return Home <span
+                        class="sr-only">(current)</span></a>
+            </li>
+            {% else %}
+            <li class="nav-item active">
+                <a class="nav-link" href="/"> Return Home <span class="sr-only">(current)</span></a>
+            </li>
+            {% endif %}
+            <li class="nav-item">
+                <a class="nav-link" href="/curiosity/photos">🌔Moon's Photo Collection</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<h2 class="m-3">A beautiful image of Moon  </h2>
+<h4 class="m-3"> The mission? <a target="_blank"
+        href="https://www.nasa.gov/press-release/nasa-selects-new-science-investigations-for-future-moon-deliveries.">To
+        discover future life.</a> NASA Selects New Science Investigations for Future Moon Deliveries </h4>
+<div>
+    <img src="https://static3.bigstockphoto.com/8/5/2/large1500/258794992.jpg" alt="illustration of moon in space"
+        class=" mx-auto d-block"></div>
+<div class="card m-3">
+    <div class="card-body">
+        <div class="card-title">
+            Observations
+        </div>
+        <div class="card-text">The ultimate guide to observing the moon <a target="_blank"
+                href="https://www.space.com/ultimate-moon-observation-guide">an
+                oasis within Gale Crater</a>. It’s gone beyond the
+            oasis to take a <a target="_blank"
+                href="https://www.nasa.gov/press-release/as-artemis-moves-forward-nasa-picks-spacex-to-land-next-americans-on-moon ">llustration of SpaceX Starship human lander design that will carry the first NASA astronauts to the surface of the Moon under the Artemis program.
+                Credits: SpaceX</a>As Artemis Moves Forward, NASA Picks SpaceX to Land Next Americans on Moon <a target="_blank"
+                href="https://www.nationalgeographic.com/science/article/moon-exploration">MOON BUGGY
+
+                Apollo 17 mission Commander Eugene Cernan checks out the lunar roving vehicle (LRV) at the Taurus-Littrow landing site in December 1972. LRVs, also called moon buggies, are electric vehicles designed to expand astronauts' range of exploration on the low-gravity</a> A brief history of moon exploration. </div>
+    </div>
+</div>
+
+<div class="card m-3">
+    <div class="card-body">
+        <div class="card-title">
+            Tools
+        </div>
+        <div class="card-text"> Curiosity uses a number of <a target="_blank"
+                href="https://moon.nasa.gov/msl/spacecraft/instruments/summary/">highly
+                specialized cameras</a>. The MastCam takes images of the landscape to weave together into panoramas. The
+            ChemCam works on
+            taking images to help Earth-side scientists study the chemical makeup of the land on moon. Curiosity also
+            possesses a Radiation
+            Assessment Detector to help determine radiation levels to prepare for future travel to moon.
+        </div>
+    </div>
+</div>
+
+<div class="card m-3">
+    <div class="card-body">
+        <div class="card-title">
+            What's next?
+        </div>
+        <div class="card-text"> Curiosity will soon be joined by a new rover from NASA, <a target="_blank"
+                href="https://moon.nasa.gov/moon2020/">Perseverance!</a> It is scheduled to join Curiosity on moon on
+            February 18, 2021.
+            Perseverance has highly <a target="_blank"
+                href="https://moon.nasa.gov/news/8759/nasas-new-moon-rover-will-use-x-rays-to-hunt-fossils/">specialized
+                X-ray tools</a> to make chemical analyses.</div>
+    </div>
+</div>
+
+{% endblock %}

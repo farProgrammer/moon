@@ -1,0 +1,80 @@
+{% extends "index.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/users/signup">Sign Up <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Log In</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container bg-dark text-white">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+</div>
+
+<div class="jumbotron jumbotron-fluid bg-danger text-white">
+    <div class="container m-0">
+        <h1 class="display-4"> The moon Photo Album</h1>
+        <p class="lead text-monospace">Let See How is our Moon,Little Knowledge !</p>
+    </div>
+</div>
+
+
+<div class="row bg-info text-white p-4">
+    <div class="col-12 col-sm-6 col-md-4">
+        <div class="card m-1">
+            <div class="card-body" style="width: 18rem;">
+                <img class="card-img-top" src="https://images.pexels.com/photos/47367/full-moon-moon-bright-sky-47367.jpeg?cs=srgb&dl=pexels-pixabay-47367.jpg&fm=jpg" alt="The red planet">
+                <h5 class=" card-title text-dark m-1">Our Moon 🌑 </h5>
+                <p class="card-text text-dark"> It's {{celsius_on_moon}} degrees Celsius on moon this week!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 ">
+        <div class="card m-1">
+            <div class="card-body" style="width: 18rem;">
+                <img class="card-img-top" src="https://cdn.mos.cms.futurecdn.net/neb9NZSYRBKaNkxVnSLBPC.jpg"
+                    alt="The red planet alone in space">
+                <h5 class="card-text text-dark m-1">Learn more</h5>
+                <p class="card-text text-dark m-1">What is moon?</p>
+                <a href="/mission-info" class="btn btn-danger">More Information</a>
+            </div>
+        </div>
+    </div>
+    <div class=" col-12 col-sm-6 col-md-4">
+        <div class="card m-1">
+            <div class="card-body" style=" width: 18rem;">
+                <img class="card-img-top" src="https://cdn.mos.cms.futurecdn.net/2j37GM38fXd9kFxkenLZ9G-970-80.jpg.webp"
+                    alt="The wrinkled surface of the moon">
+                <h5 class="card-title text-dark m-1">
+                    Photos from Neil Armstrong</h5>
+                <p class="card-text text-dark">The only full-body photograph of Neil Armstrong on the moon shows him working at the Apollo 11 lunar module "Eagle" on July 20, 1969. The first man to set foot on the lunar surface was inadvertently captured on film by Buzz Aldrin, who was tasked with taking a series of panoramic photos. (Image credit: NASA). <a href="/users/signup">Sign up</a> to save your favorites! </p>
+                <a href="https://moon.nasa.gov/galleries/images/?page=0&per_page=25&order=created_at+desc&search=&href_query_params=category%3Dimages&condition_1=1%3Ais_in_resource_list&category=51" class="btn btn-danger">View photos</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+{% endblock %}
