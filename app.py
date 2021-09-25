@@ -17,6 +17,8 @@ CURR_USER_KEY = "curr_user"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
     'DATABASE_URL', "postgres:///moon")
+# postgres://kdzzumxnhovgte:694fc05cc1f47ab6e34763d90fde92b12dcada2b84f1e4a7a97251b93bc94ee6@ec2-44-196-250-191.compute-1.amazonaws.com:5432/dccfr6hhbdlhp9
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SECRET_KEY'] = os.environ.get('SECRET', 'abc123')
@@ -24,7 +26,7 @@ app.config['SECRET_KEY2'] = os.environ.get('APIKEY', 'abc123')
 app.config['SECRET_KEY3'] = os.environ.get('WAPIKEY', 'abc123')
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 WAPIKEY = os.environ.get('WAPIKEY')
-APIKEY = os.environ.get('APIKEY')
+APIKEY = os.environ.get('OIYy6ptNuqjr3E6fYEhBcuf0LtdAFwcrAwmjrKBy')
 
 connect_db(app)
 db.create_all()
@@ -98,7 +100,7 @@ def show_logged_in_homepage(user_id):
     except:
         celsius_on_moon = data[sol_day_of_curr_date]["AT"]["av"]
 
-        return render_template("homepage.html", celsius_on_moon=celsius_on_moon)
+    return render_template("homepage.html", celsius_on_moon=celsius_on_moon)
 
     if not g.user:
         flash("Please login.")
@@ -121,7 +123,7 @@ def show_curiosity_photos():
     """route to display Curiosity info and photos"""
 
     mission_info_resp = requests.get(
-        f'https://api.nasa.gov/moon-photos/api/v1/rovers/curiosity/latest_photos?api_key={APIKEY}')
+        f'https://api.nasa.gov/moon/api/v1/rovers/curiosity/latest_photos?api_key={APIKEY}')
     favorites = Favorites.query.all()
     data = mission_info_resp.json()
 
